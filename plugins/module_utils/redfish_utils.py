@@ -2092,7 +2092,7 @@ class RedfishUtils(object):
                 payload['Boot']['BootSourceOverrideMode'] = boot_override_mode
 
         # Apply the requested boot override request
-        resp = self.patch_request(self.root_uri + self.systems_uri, payload, check_pyld=True)
+        resp = self.patch_request(self.root_uri + self.systems_uri + '/SD', payload, check_pyld=True)
         if resp['ret'] is False:
             # WORKAROUND
             # Older Dell systems do not allow BootSourceOverrideEnabled to be
