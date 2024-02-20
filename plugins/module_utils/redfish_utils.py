@@ -1962,7 +1962,7 @@ class RedfishUtils(object):
         properties = ["BootSourceOverrideEnabled", "BootSourceOverrideTarget",
                       "BootSourceOverrideMode", "UefiTargetBootSourceOverride", "BootSourceOverrideTarget@Redfish.AllowableValues"]
 
-        response = self.get_request(self.root_uri + systems_uri)
+        response = self.get_request(self.root_uri + systems_uri + '/SD')
         if response['ret'] is False:
             return response
         result['ret'] = True
